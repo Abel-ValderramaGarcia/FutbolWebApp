@@ -1,0 +1,41 @@
+[Workspace]
+CurrentProject=WebApp.src
+Location=C:\DataFlex Projects\FutbolWebApp\IdeSrc\Krust_Studio.dsk
+CreateNew=3
+[TabWindows]
+GroupCount=1
+HorizontalGroups=1
+[TabGroup0]
+GroupSize=40
+SelectedTab=2
+[Window0]
+Filename=Workspace Dashboard
+ViewType=101
+Top=21
+Left=0
+Bottom=685
+Right=1477
+TabIndex=0
+TabGroup=0
+[Window1]
+Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\WebApp.src
+ViewType=1
+Top=21
+Left=0
+Bottom=685
+Right=1477
+CursorLine=31
+CursorColumn=29
+TabIndex=1
+TabGroup=0
+[Window2]
+Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashboard.wo
+ViewType=1
+Top=21
+Left=0
+Bottom=685
+Right=1477
+CursorLine=51
+CursorColumn=42
+TabIndex=2
+TabGroup=0
