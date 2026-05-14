@@ -23,9 +23,8 @@ Object oZoomLiga is a cWebView
     End_Object 
 
     Set Main_DD To oliga_DD
-    Set Server  To oliga_DD
-
-
+    Set Server  to oliga_DD
+    
     Object oWebMainPanel is a cWebPanel
         Set piColumnCount to 12
         WebSetResponsive piColumnCount rmMobile to 4
@@ -68,8 +67,27 @@ Object oZoomLiga is a cWebView
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
             Set psLabel to "EquiposMax"
-        End_Object 
-    End_Object 
+        End_Object
+        
+        // Botón en ZoomLiga que abrirá el Select de equipos de esta liga (tarea From parent -> Zoom liga)
+    Object oBtnVerEquipos is a cWebButton // este botón llevará a SelectEquipo
+           Set psCaption to "Ver equipos"
+           Set piColumnSpan to 6
+           Set piColumnIndex to 0
+           
+        WebRegisterPath ntNavigateForward oSelectEquipo
+        
+        Procedure OnClick  // Navegar desde el padre (ZoomLiga ) hasta la hija (SlectEquipo)
+            Send NavigatePath
+        End_Procedure
+        
+        Procedure OnGetNavigateForwardData tWebNavigateData ByRef NavigateData
+            Forward Send OnGetNavigateForwardData (&NavigateData)
+                // Aquí NavigateData.sRowId llevará el RowId de la liga actual.
+        End_Procedure       
+        End_Object // botón
+    
+    End_Object  // oWebMainPanel 
 
     Object oActionGroup is a cWebMenuGroup
 
