@@ -11,6 +11,7 @@ Use cWebForm.pkg
 Use cligaDataDictionary.dd
 Use cequipoDataDictionary.dd
 Use centrenadorDataDictionary.dd
+Use cWebButton.pkg
 
 Object oZoomEntrenador is a cWebView
     Set piColumnCount to 12
@@ -87,6 +88,15 @@ Object oZoomEntrenador is a cWebView
                 Send NavigatePath
             End_Procedure
         End_Object 
+
+        Object oButtonDespedir is a cWebButton
+            Set piColumnSpan to 2
+            Set psCaption to "Despedir"
+        
+            Procedure OnClick
+                Send Clear of oequipo_DD
+            End_Procedure
+        End_Object
     End_Object 
 
     Object oActionGroup is a cWebMenuGroup
@@ -117,6 +127,7 @@ Object oZoomEntrenador is a cWebView
             Set peActionDisplay to adMenu
 
             Procedure OnClick
+                Send Clear of oequipo_DD
                 Send Request_Delete
             End_Procedure
 
