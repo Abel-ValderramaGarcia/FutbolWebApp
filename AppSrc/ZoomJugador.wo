@@ -4,10 +4,12 @@ Use cWebMenuGroup.pkg
 Use cWebMenuItem.pkg
 Use cWebForm.pkg
 Use cWebButton.pkg
+Use cWebCombo.pkg
 
 Use cligaDataDictionary.dd
 Use cequipoDataDictionary.dd
 Use cjugadorDataDictionary.dd
+Use cCodeMastDataDictionary.dd
 Use SelectPosicion.wo
 
 Object oZoomJugador is a cWebView
@@ -28,6 +30,9 @@ Object oZoomJugador is a cWebView
 
     Object ojugador_DD is a cjugadorDataDictionary
         Set Server to oequipo_DD
+    End_Object
+
+    Object oCodeMast_DD is a cCodeMastDataDictionary
     End_Object
 
     Set Main_DD to ojugador_DD
@@ -53,12 +58,21 @@ Object oZoomJugador is a cWebView
             Set psLabel         to "Apellido"
         End_Object
 
-        Object ojugadorNacionalidad is a cWebForm
+        Object ojugadorNacionalidad is a cWebCombo
             Entry_Item jugador.Nacionalidad
             Set piColumnSpan    to 8
             Set piColumnIndex   to 0
             Set peLabelPosition to lpTop
             Set psLabel         to "Nacionalidad"
+            
+            Procedure OnFill
+        Forward Send OnFill
+        Send AddComboItem "ESP" "Española"
+        Send AddComboItem "BEL" "Belga"
+        Send AddComboItem "FRA" "Francesa"
+        Send AddComboItem "ARG" "Argentina"
+        Send AddComboItem "BRA" "Brasileña"
+    End_Procedure
         End_Object
 
         Object ojugadorPosicion is a cWebForm
