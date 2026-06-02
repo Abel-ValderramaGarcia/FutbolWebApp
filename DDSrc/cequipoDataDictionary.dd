@@ -6,7 +6,7 @@ Open jugador
 Open liga
 
 Class cequipoDataDictionary is a DataDictionary
-    
+
     Procedure Construct_Object
         Forward Send Construct_Object
         Set Main_File to equipo.File_Number

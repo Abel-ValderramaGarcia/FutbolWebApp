@@ -6,13 +6,14 @@ Open jugadorposicion
 Open equipo
 
 Class cjugadorDataDictionary is a DataDictionary
-    
+
     Procedure Construct_Object
         Forward Send Construct_Object
         Set Main_File to jugador.File_Number
 
         Set Add_Server_File to equipo.File_Number
-
+	Set ParentNullAllowed equipo.File_Number to true
+        
         Set Add_Client_File to hijojugador.File_Number
         Set Add_Client_File to jugadorposicion.File_Number
 

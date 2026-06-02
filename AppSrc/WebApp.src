@@ -12,8 +12,6 @@ Object oWebApp is a cWebApp
     Set psTheme to "Df_Material"
     Set peAlignView to alignCenter
     
-    // It is important to set this so that all views will default
-    // to drill down style views.
     Set peApplicationStyle to wvsDrillDown   
     Set peApplicationStateMode to asmHistoryAndUrls 
     Set psEncryptPassword to "{OZDNOI\/=~bKcTKJ.oo(N5l~fC?e()#j~s[dyF."
@@ -201,5 +199,4 @@ Object oWebApp is a cWebApp
     Set phoDefaultView to oDashboard
 
 End_Object
-
 Send StartWebApp of oWebApp
